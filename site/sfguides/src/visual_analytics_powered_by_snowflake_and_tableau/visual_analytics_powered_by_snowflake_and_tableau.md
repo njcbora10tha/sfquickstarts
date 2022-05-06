@@ -203,8 +203,11 @@ select count(*) from vhol_trips_dev limit 1;
 
 <!-- ------------------------ -->
 ## Add Weather Data from Snowflake Marketplace
+You may have to click the home icon at the top left of the screen in order to see Marketplace.
 
 ### Click on Data Marketplace and type WEATHER in Search Snowflake Marketplace toolbar
+
+You will need to click on the square that says Global Weather & Climate Data for BI.
 
 ![Search Dataset](assets/Weather_DM_1.png)
 

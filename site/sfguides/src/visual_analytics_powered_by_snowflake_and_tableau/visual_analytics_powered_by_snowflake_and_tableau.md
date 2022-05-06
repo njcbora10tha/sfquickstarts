@@ -205,6 +205,8 @@ select count(*) from vhol_trips_dev limit 1;
 ## Add Weather Data from Snowflake Marketplace
 
 ### Click on Data Marketplace and type WEATHER in Search Snowflake Marketplace toolbar
+You may have to click on the home icon on the top left of the page just below the bookmarks bar.
+
 
 ![Search Dataset](assets/Weather_DM_1.png)
 

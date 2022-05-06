@@ -216,6 +216,24 @@ select count(*) from vhol_trips_dev limit 1;
 
 ![Click Done](assets/Weather_DM_3.png)
 
+Now return to your Snowflake Worksheet.
+Make sure you select the correct worksheet and not the Global Weather & Climate Data for BI - Examples that was just created.
+
+
+desc view weather.standard_tile.history_day;
+
+If you receive an error chances are you did not name the database WEATHER when you brought it in from the marketplace.
+That can be fixed with this statement:
+ALTER DATABASE WEATHERSOURCE_TILE_SAMPLE_SNOWFLAKE_SECURE_SHARE_1641488329256 RENAME TO WEATHER;
+
+select * from weather.standard_tile.history_day limit 1;
+
+-- Is there rain in the forecast that impact cycling
+SELECT COUNTRY,DATE_VALID_STD,TOT_PRECIPITATION_IN,tot_snowfall_in AS SNOWFALL,  POSTAL_CODE, DATEDIFF(day,current_date(),DATE_VALID_STD) AS DAY, HOUR(TIME_INIT_UTC) AS HOUR  FROM WEATHER.STANDARD_TILE.FORECAST_DAY WHERE POSTAL_CODE='32333' AND DAY=7;
+--select
+
+
+
 ### Convert Kelvin to Celcius
 ``` sql
 -- UDF to convert Kelvin to Celcius
@@ -568,7 +586,6 @@ select * from vhol_trips_secure limit 100;
 ### Create Reader Account 
 ``` sql
 --create a reader account for your tenant
-
 
 CREATE MANAGED ACCOUNT IMP_CLIENT
     admin_name='USER',
